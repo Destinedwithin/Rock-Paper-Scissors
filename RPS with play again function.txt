@@ -1,0 +1,156 @@
+
+import random
+
+choices = ["rock","paper","scissors"]
+
+
+winning_score = 10
+cscore = 0
+pscore = 0
+round = 1
+while True:
+    comp = random.choice(choices)
+    player = None
+
+    player = input("rock, paper or scissors?: ").lower()
+
+    while player not in choices:
+        print("you have to choose the correct choices! ")
+        player = input("rock, paper or scissors?: ").lower()
+
+    if player == comp:
+        print("computer: ",comp)
+        print("you: ", player)
+        print("its a tie!")
+        pscore = pscore + 1
+        cscore = cscore + 1
+
+    elif player == "rock":
+        if comp == "paper":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("you lose!")
+            cscore =cscore + 1
+        if comp == "scissors":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("You won! ")
+            pscore = pscore + 1
+    elif player == "paper":
+        if comp == "scissors":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("you lose!")
+            cscore = cscore + 1
+        if comp == "rock":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("You won! ")
+            pscore = pscore + 1
+    elif player == "scissors":
+        if comp == "rock":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("you lose!")
+            cscore = cscore + 1
+        if comp == "paper":
+            print("computer: ", comp)
+            print("you: ", player)
+            print("You won! ")
+            pscore = pscore + 1
+    print("your score is: "+str(pscore))
+    print("computer score is: "+str(cscore))
+    round = round + 1
+
+    if pscore == winning_score and cscore == winning_score:
+            print("you and the computer win the game at a draw!")
+            break
+
+    elif pscore == winning_score:
+            print("you won the game!")
+            break
+
+    elif cscore == winning_score:
+            print("the computer won the game! you Lost! ")
+            break
+
+    else:
+            print("prepare for the next round!")
+while True:
+    user_input = input("do you want to play again?(Y/N)?").lower()
+    if user_input == "y":
+        winning_score = 10
+        cscore = 0
+        pscore = 0
+        round = 1
+        while True:
+            comp = random.choice(choices)
+            player = None
+
+            player = input("rock, paper or scissors?: ").lower()
+
+            while player not in choices:
+                print("you have to choose the correct choices! ")
+                player = input("rock, paper or scissors?: ").lower()
+
+            if player == comp:
+                print("computer: ", comp)
+                print("you: ", player)
+                print("its a tie!")
+                pscore = pscore + 1
+                cscore = cscore + 1
+
+            elif player == "rock":
+                if comp == "paper":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("you lose!")
+                    cscore = cscore + 1
+                if comp == "scissors":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("You won! ")
+                    pscore = pscore + 1
+            elif player == "paper":
+                if comp == "scissors":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("you lose!")
+                    cscore = cscore + 1
+                if comp == "rock":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("You won! ")
+                    pscore = pscore + 1
+            elif player == "scissors":
+                if comp == "rock":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("you lose!")
+                    cscore = cscore + 1
+                if comp == "paper":
+                    print("computer: ", comp)
+                    print("you: ", player)
+                    print("You won! ")
+                    pscore = pscore + 1
+            print("your score is: " + str(pscore))
+            print("computer score is: " + str(cscore))
+            round = round + 1
+
+            if pscore == winning_score and cscore == winning_score:
+                print("you and the computer win the game at a draw!")
+                break
+
+            elif pscore == winning_score:
+                print("you won the game!")
+                break
+
+            elif cscore == winning_score:
+                print("the computer won the game! you Lost! ")
+                break
+
+            else:
+                print("prepare for the next round!")
+    else:
+        print("thanks for playing!")
+        break
